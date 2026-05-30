@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GestiResto | Réservation Moderne</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">🍽️ RestoSoufiane</div>
+      <nav>
+        <ul>
+          <li><a href="#" class="active">Réservations</a></li>
+          <li><a href="#">Menu</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="dashboard">
+      <div class="intro-text">
+        <h2>Gérez vos tables en toute simplicité</h2>
+        <p>Ajoutez et consultez les réservations en temps réel.</p>
+      </div>
+
+      <div class="container">
+        <section class="card form-panel">
+          <h3>Nouvelle Réservation</h3>
+          <form id="reservationForm">
+            <div class="input-group">
+              <label for="nom">Nom complet</label>
+              <input
+                type="text"
+                id="nom"
+                placeholder="Ex: Karim Dupont"
+                autocomplete="off"
+                required
+              />
+            </div>
+            <div class="row">
+              <div class="input-group">
+                <label for="date">Date & Heure</label>
+                <input type="datetime-local" id="date" required />
+              </div>
+              <div class="input-group">
+                <label for="personnes">Nombre Personne </label>
+                <input
+                  type="number"
+                  id="personnes"
+                  min="1"
+                  max="20"
+                  placeholder="Ex: 2"
+                  required
+                />
+              </div>
+            </div>
+            <button type="submit" class="btn-primary">
+              <span>Confirmer la réservation</span>
+              <svg
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </button>
+          </form>
+        </section>
+
+        <section class="card list-panel">
+          <div class="panel-header">
+            <h3>Réservations</h3>
+            <div class="filter-buttons">
+              <button id="btnAll" class="btn-filter active">
+                Toutes (<span id="countAll">0</span>)
+              </button>
+              <button id="btnToday" class="btn-filter">
+                Aujourd'hui (<span id="countToday">0</span>)
+              </button>
+            </div>
+          </div>
+          <div id="reservationsList" class="scroll-container"></div>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
